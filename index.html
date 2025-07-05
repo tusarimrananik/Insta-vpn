@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram VPN Activation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1100px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .left-section {
+            flex: 1;
+            background: linear-gradient(135deg, #405de6, #5851db, #833ab4);
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .instagram-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .right-section {
+            flex: 1.2;
+            padding: 40px;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-icon {
+            font-size: 28px;
+            background: linear-gradient(45deg, #405de6, #833ab4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #405de6, #833ab4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-description {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefits {
+            margin: 25px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit i {
+            margin-right: 10px;
+            color: #fcb045;
+        }
+
+        .price-container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-label {
+            font-size: 18px;
+            margin-bottom: 5px;
+            opacity: 0.9;
+        }
+
+        .price {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .billing-cycle {
+            font-size: 15px;
+            opacity: 0.8;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #333;
+            background: linear-gradient(45deg, #405de6, #833ab4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #833ab4;
+            box-shadow: 0 0 0 2px rgba(131, 58, 180, 0.2);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group input {
+            margin-top: 5px;
+            margin-right: 10px;
+        }
+
+        .checkbox-group label {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .checkbox-group a {
+            color: #405de6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(to right, #405de6, #833ab4);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(131, 58, 180, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(131, 58, 180, 0.4);
+        }
+
+        .secure-payment {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .payment-icon {
+            font-size: 32px;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-section {
+                padding: 30px;
+            }
+
+            .right-section {
+                padding: 30px;
+            }
+        }
+
+        .discount-badge {
+            background: #fcb045;
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .guarantee {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 12px;
+            background: #f0f8ff;
+            border-radius: 10px;
+            border-left: 4px solid #405de6;
+        }
+
+        .guarantee i {
+            font-size: 24px;
+            color: #405de6;
+        }
+
+        .guarantee-text {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Instagram Profile Section */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 15px;
+            border: 1px solid #eee;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .profile-pic-container {
+            position: relative;
+            margin-right: 20px;
+        }
+
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-stats {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 12px;
+            background: white;
+            border-radius: 10px;
+            flex: 1;
+            margin: 0 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #405de6;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .static-profile {
+            width: 100%;
+        }
+
+        .static-profile .profile-name {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .static-profile .profile-bio {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.4;
+        }
+
+        .edit-instructions {
+            background: #f8f9fa;
+            border-left: 4px solid #405de6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .edit-instructions h4 {
+            color: #405de6;
+            margin-bottom: 8px;
+        }
+
+        .edit-instructions code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="instagram-bg"></div>
+            <div>
+                <div class="logo">
+                    <i class="fab fa-instagram logo-icon"></i>
+                    <div class="logo-text">InstaVPN Pro</div>
+                </div>
+                <h1 class="product-title">Unlock Global Instagram Access</h1>
+                <p class="product-description">Bypass restrictions, protect your privacy, and grow your Instagram
+                    presence with our dedicated VPN service.</p>
+
+                <div class="benefits">
+                    <div class="benefit">
+                        <i class="fas fa-globe-americas"></i>
+                        <span>Access Instagram from any country</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Protect your account from hackers</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Grow your followers globally</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-bolt"></i>
+                        <span>High-speed connection for stories & reels</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-user-secret"></i>
+                        <span>Complete anonymity</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-container">
+                <div class="price-label">Special Launch Price</div>
+                <div class="price">$7.99<span style="font-size: 20px"> USD</span></div>
+                <div class="billing-cycle">One-time payment • No subscription</div>
+                <div class="discount-badge">Limited Time Offer - Save 60%</div>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <h2 class="section-title">Activate Your Account</h2>
+
+            <div class="profile-section">
+                <div class="profile-header">
+                    <div class="profile-pic-container">
+                        <div class="profile-pic" id="profilePic">
+                            <!-- Profile picture will be set by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="static-profile">
+                        <div class="profile-name" id="profileName">traveler_jane</div>
+                        <!-- <div class="profile-bio">
+
+                            ???
+                            she/her
+                            Us against the world just...🎀
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="profile-stats">
+                    <div class="stat">
+                        <div class="stat-value" id="postsValue">246</div>
+                        <div class="stat-label">Posts</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="followersValue">8.2K</div>
+                        <div class="stat-label">Followers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="followingValue">512</div>
+                        <div class="stat-label">Following</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="edit-instructions">
+                <h4>Customize This Profile</h4>
+                <p>To customize the Instagram profile, edit these values in the JavaScript code:</p>
+                <p><code>profileData.username</code> - Change the username</p>
+                <p><code>profileData.posts</code> - Number of posts</p>
+                <p><code>profileData.followers</code> - Follower count</p>
+                <p><code>profileData.following</code> - Following count</p>
+                <p><code>profileData.imageUrl</code> - URL for profile picture</p>
+            </div> -->
+
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="Your email for account activation"
+                        required>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy
+                            Policy</a>. I understand this is a one-time payment of $7.99 USD for VPN activation.</label>
+                </div>
+
+                <button type="submit" class="btn">
+                    <i class="fas fa-lock"></i> Activate VPN Access - $7.99 USD
+                </button>
+
+                <div class="secure-payment">
+                    <i class="fas fa-lock"></i>
+                    <span>256-bit Encryption • Secure Payment</span>
+                </div>
+
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa payment-icon"></i>
+                    <i class="fab fa-cc-mastercard payment-icon"></i>
+                    <i class="fab fa-cc-amex payment-icon"></i>
+                    <i class="fab fa-cc-paypal payment-icon"></i>
+                    <i class="fab fa-cc-apple-pay payment-icon"></i>
+                </div>
+
+                <div class="guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="guarantee-text"><strong>30-day satisfaction guarantee:</strong> If you're not satisfied
+                        with our VPN service, we'll refund your payment.</div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Profile data - easily customizable
+        const profileData = {
+            username: "_naridon2011_",
+            posts: 0,
+            followers: 70,
+            following: 103,
+            imageUrl: "/img.jpg"
+        };
+
+        // Set profile data in the DOM
+        document.getElementById('profileName').textContent = "@" + profileData.username;
+        document.getElementById('postsValue').textContent = profileData.posts;
+        document.getElementById('followersValue').textContent = formatNumber(profileData.followers);
+        document.getElementById('followingValue').textContent = profileData.following;
+
+        // Set profile picture
+        const profilePic = document.getElementById('profilePic');
+        if (profileData.imageUrl) {
+            profilePic.style.backgroundImage = `url(${profileData.imageUrl})`;
+            profilePic.style.backgroundSize = 'cover';
+            profilePic.style.backgroundPosition = 'center';
+            profilePic.innerHTML = '';
+        } else {
+            profilePic.innerHTML = '<i class="fas fa-user fa-2x"></i>';
+        }
+
+        // Format large numbers
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'K';
+            }
+            return num;
+        }
+
+        // Form submission
+        document.getElementById('checkoutForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Form validation
+            const email = document.getElementById('email').value;
+
+            if (!email) {
+                alert('Please enter your email address.');
+                return;
+            }
+
+            // Simple email validation
+            if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Show processing message
+            const btn = document.querySelector('.btn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Activating your VPN...';
+            btn.disabled = true;
+
+            // Simulate payment processing
+            setTimeout(() => {
+                alert("Please log in to your account to proceed with VPN activation. Thank you!");
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+
+                // Reset form
+                document.getElementById('checkoutForm').reset();
+            }, 2500);
+        });
+    </script>
+</body>
+
+</html>
