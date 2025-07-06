@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram VPN Activation</title>
+    <title>Instagram Location Verification</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -26,52 +26,22 @@
         }
 
         .container {
-            display: flex;
-            max-width: 1100px;
+            max-width: 500px;
             width: 100%;
             background: white;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .left-section {
-            flex: 1;
-            background: linear-gradient(135deg, #405de6, #5851db, #833ab4);
-            color: white;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .instagram-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background:
-                radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            opacity: 0.1;
-            z-index: 0;
-        }
-
-        .right-section {
-            flex: 1.2;
-            padding: 40px;
-            position: relative;
+            padding: 30px;
+            text-align: center;
         }
 
         .logo {
             display: flex;
+            justify-content: center;
             align-items: center;
             gap: 10px;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 20px;
         }
 
         .logo-icon {
@@ -90,51 +60,97 @@
         }
 
         .product-title {
-            font-size: 32px;
+            font-size: 26px;
             font-weight: 700;
             margin-bottom: 15px;
-            line-height: 1.2;
-            position: relative;
-            z-index: 1;
+            line-height: 1.3;
+            color: #333;
         }
 
         .product-description {
             font-size: 16px;
             line-height: 1.6;
             margin-bottom: 25px;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
+            color: #555;
         }
 
-        .benefits {
-            margin: 25px 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .benefit {
+        .profile-section {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 15px;
-            font-size: 15px;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 15px;
+            border: 1px solid #eee;
         }
 
-        .benefit i {
-            margin-right: 10px;
-            color: #fcb045;
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .profile-bio {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .profile-stats {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 12px;
+            background: white;
+            border-radius: 10px;
+            flex: 1;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #405de6;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #777;
         }
 
         .price-container {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 20px;
-            border-radius: 12px;
+            background: linear-gradient(135deg, #405de6, #833ab4);
+            padding: 25px;
+            border-radius: 15px;
             text-align: center;
-            margin-top: 20px;
-            position: relative;
-            z-index: 1;
+            margin: 20px 0;
+            color: white;
+            box-shadow: 0 4px 15px rgba(131, 58, 180, 0.3);
         }
 
         .price-label {
@@ -151,21 +167,34 @@
 
         .billing-cycle {
             font-size: 15px;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
-        .section-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 25px;
-            color: #333;
-            background: linear-gradient(45deg, #405de6, #833ab4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .benefits {
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .benefit i {
+            margin-right: 10px;
+            color: #405de6;
+            font-size: 20px;
+            min-width: 30px;
         }
 
         .form-group {
             margin-bottom: 20px;
+            text-align: left;
         }
 
         .form-group label {
@@ -248,51 +277,12 @@
             justify-content: center;
             gap: 15px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .payment-icon {
             font-size: 32px;
             color: #555;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .left-section {
-                padding: 30px;
-            }
-
-            .right-section {
-                padding: 30px;
-            }
-        }
-
-        .discount-badge {
-            background: #fcb045;
-            color: #333;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 10px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
         }
 
         .guarantee {
@@ -304,11 +294,13 @@
             background: #f0f8ff;
             border-radius: 10px;
             border-left: 4px solid #405de6;
+            text-align: left;
         }
 
         .guarantee i {
             font-size: 24px;
             color: #405de6;
+            min-width: 30px;
         }
 
         .guarantee-text {
@@ -316,283 +308,150 @@
             color: #555;
         }
 
-        /* Instagram Profile Section */
-        .profile-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 25px;
-            padding: 20px;
-            background: #fafafa;
-            border-radius: 15px;
-            border: 1px solid #eee;
-        }
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
 
-        .profile-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            width: 100%;
-        }
+            .product-title {
+                font-size: 22px;
+            }
 
-        .profile-pic-container {
-            position: relative;
-            margin-right: 20px;
-        }
+            .profile-pic {
+                width: 80px;
+                height: 80px;
+            }
 
-        .profile-pic {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid white;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            background: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-        }
+            .price {
+                font-size: 36px;
+            }
 
-        .profile-info {
-            flex: 1;
-        }
+            .benefit {
+                font-size: 14px;
+            }
 
-        .profile-stats {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            margin-top: 15px;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 12px;
-            background: white;
-            border-radius: 10px;
-            flex: 1;
-            margin: 0 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-
-        .stat-value {
-            font-size: 20px;
-            font-weight: 700;
-            color: #405de6;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            color: #777;
-        }
-
-        .static-profile {
-            width: 100%;
-        }
-
-        .static-profile .profile-name {
-            font-weight: 600;
-            font-size: 18px;
-            margin-bottom: 5px;
-            color: #333;
-        }
-
-        .static-profile .profile-bio {
-            font-size: 14px;
-            color: #777;
-            line-height: 1.4;
-        }
-
-        .edit-instructions {
-            background: #f8f9fa;
-            border-left: 4px solid #405de6;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
-            font-size: 14px;
-        }
-
-        .edit-instructions h4 {
-            color: #405de6;
-            margin-bottom: 8px;
-        }
-
-        .edit-instructions code {
-            background: #e9ecef;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: monospace;
+            .btn {
+                padding: 14px;
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="left-section">
-            <div class="instagram-bg"></div>
-            <div>
-                <div class="logo">
-                    <i class="fab fa-instagram logo-icon"></i>
-                    <div class="logo-text">InstaVPN Pro</div>
-                </div>
-                <h1 class="product-title">Unlock Global Instagram Access</h1>
-                <p class="product-description">Bypass restrictions, protect your privacy, and grow your Instagram
-                    presence with our dedicated VPN service.</p>
+        <div class="logo">
+            <i class="fab fa-instagram logo-icon"></i>
+            <div class="logo-text">Location Verification</div>
+        </div>
 
-                <div class="benefits">
-                    <div class="benefit">
-                        <i class="fas fa-globe-americas"></i>
-                        <span>Access Instagram from any country</span>
-                    </div>
-                    <div class="benefit">
-                        <i class="fas fa-user-shield"></i>
-                        <span>Protect your account from hackers</span>
-                    </div>
-                    <div class="benefit">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Grow your followers globally</span>
-                    </div>
-                    <div class="benefit">
-                        <i class="fas fa-bolt"></i>
-                        <span>High-speed connection for stories & reels</span>
-                    </div>
-                    <div class="benefit">
-                        <i class="fas fa-user-secret"></i>
-                        <span>Complete anonymity</span>
-                    </div>
-                </div>
+        <h1 class="product-title">Verify Your Location & Unlock Full Instagram Features</h1>
+
+        <p class="product-description">Complete this one-time verification to secure your account and access all
+            Instagram features without restrictions.</p>
+
+        <div class="profile-section">
+            <div class="profile-pic">
+                <img src="/img.jpg" alt="Profile Picture">
             </div>
 
-            <div class="price-container">
-                <div class="price-label">Special Launch Price</div>
-                <div class="price">$7.99<span style="font-size: 20px"> USD</span></div>
-                <div class="billing-cycle">One-time payment • No subscription</div>
-                <div class="discount-badge">Limited Time Offer - Save 60%</div>
+            <div class="profile-name" id="profileName">@_naridon2011_</div>
+
+            <div class="profile-stats">
+                <div class="stat">
+                    <div class="stat-value" id="postsValue">0</div>
+                    <div class="stat-label">Posts</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="followersValue">70</div>
+                    <div class="stat-label">Followers</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="followingValue">103</div>
+                    <div class="stat-label">Following</div>
+                </div>
             </div>
         </div>
 
-        <div class="right-section">
-            <h2 class="section-title">Activate Your Account</h2>
+        <div class="price-container">
+            <div class="price-label">One-Time Verification Fee</div>
+            <div class="price">$12<span style="font-size: 24px"> USD</span></div>
+            <div class="billing-cycle">No recurring charges • Instant activation</div>
+        </div>
 
-            <div class="profile-section">
-                <div class="profile-header">
-                    <div class="profile-pic-container">
-                        <div class="profile-pic" id="profilePic">
-                            <!-- Profile picture will be set by JavaScript -->
-                        </div>
-                    </div>
-                    <div class="static-profile">
-                        <div class="profile-name" id="profileName">traveler_jane</div>
-                        <!-- <div class="profile-bio">
+        <div class="benefits">
+            <div class="benefit">
+                <i class="fas fa-globe-americas"></i>
+                <span>Verify your location to access all features</span>
+            </div>
+            <div class="benefit">
+                <i class="fas fa-shield-alt"></i>
+                <span>Protect your account from suspicious activity</span>
+            </div>
+            <div class="benefit">
+                <i class="fas fa-check-circle"></i>
+                <span>Complete verification in less than 2 minutes</span>
+            </div>
+            <div class="benefit">
+                <i class="fas fa-lock"></i>
+                <span>Secure payment with 256-bit encryption</span>
+            </div>
+        </div>
 
-                            ???
-                            she/her
-                            Us against the world just...🎀
-                        </div> -->
-                    </div>
-                </div>
-
-                <div class="profile-stats">
-                    <div class="stat">
-                        <div class="stat-value" id="postsValue">246</div>
-                        <div class="stat-label">Posts</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value" id="followersValue">8.2K</div>
-                        <div class="stat-label">Followers</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value" id="followingValue">512</div>
-                        <div class="stat-label">Following</div>
-                    </div>
-                </div>
+        <form id="checkoutForm">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="form-control" placeholder="Your Instagram account email" required>
             </div>
 
-            <!-- <div class="edit-instructions">
-                <h4>Customize This Profile</h4>
-                <p>To customize the Instagram profile, edit these values in the JavaScript code:</p>
-                <p><code>profileData.username</code> - Change the username</p>
-                <p><code>profileData.posts</code> - Number of posts</p>
-                <p><code>profileData.followers</code> - Follower count</p>
-                <p><code>profileData.following</code> - Following count</p>
-                <p><code>profileData.imageUrl</code> - URL for profile picture</p>
-            </div> -->
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms of Service</a> and understand this is a one-time $12
+                    USD payment for location verification.</label>
+            </div>
 
-            <form id="checkoutForm">
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" class="form-control" placeholder="Your email for account activation"
-                        required>
+            <button type="submit" class="btn">
+                <i class="fas fa-check-circle"></i> Complete Verification - $12 USD
+            </button>
+
+            <div class="secure-payment">
+                <i class="fas fa-lock"></i>
+                <span>Secure Payment • 256-bit Encryption</span>
+            </div>
+
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa payment-icon"></i>
+                <i class="fab fa-cc-mastercard payment-icon"></i>
+                <i class="fab fa-cc-amex payment-icon"></i>
+                <i class="fab fa-cc-paypal payment-icon"></i>
+                <i class="fab fa-cc-apple-pay payment-icon"></i>
+            </div>
+
+            <div class="guarantee">
+                <i class="fas fa-shield-alt"></i>
+                <div class="guarantee-text">
+                    <strong>Money-back guarantee:</strong> If verification fails for any reason, you'll receive a full
+                    refund within 24 hours.
                 </div>
-
-                <div class="checkbox-group">
-                    <input type="checkbox" id="terms" required>
-                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy
-                            Policy</a>. I understand this is a one-time payment of $7.99 USD for VPN activation.</label>
-                </div>
-
-                <button type="submit" class="btn">
-                    <i class="fas fa-lock"></i> Activate VPN Access - $7.99 USD
-                </button>
-
-                <div class="secure-payment">
-                    <i class="fas fa-lock"></i>
-                    <span>256-bit Encryption • Secure Payment</span>
-                </div>
-
-                <div class="payment-icons">
-                    <i class="fab fa-cc-visa payment-icon"></i>
-                    <i class="fab fa-cc-mastercard payment-icon"></i>
-                    <i class="fab fa-cc-amex payment-icon"></i>
-                    <i class="fab fa-cc-paypal payment-icon"></i>
-                    <i class="fab fa-cc-apple-pay payment-icon"></i>
-                </div>
-
-                <div class="guarantee">
-                    <i class="fas fa-shield-alt"></i>
-                    <div class="guarantee-text"><strong>30-day satisfaction guarantee:</strong> If you're not satisfied
-                        with our VPN service, we'll refund your payment.</div>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 
     <script>
-        // Profile data - easily customizable
+        // Profile data
         const profileData = {
             username: "_naridon2011_",
             posts: 0,
             followers: 70,
-            following: 103,
-            imageUrl: "/img.jpg"
+            following: 103
         };
 
         // Set profile data in the DOM
         document.getElementById('profileName').textContent = "@" + profileData.username;
         document.getElementById('postsValue').textContent = profileData.posts;
-        document.getElementById('followersValue').textContent = formatNumber(profileData.followers);
+        document.getElementById('followersValue').textContent = profileData.followers;
         document.getElementById('followingValue').textContent = profileData.following;
-
-        // Set profile picture
-        const profilePic = document.getElementById('profilePic');
-        if (profileData.imageUrl) {
-            profilePic.style.backgroundImage = `url(${profileData.imageUrl})`;
-            profilePic.style.backgroundSize = 'cover';
-            profilePic.style.backgroundPosition = 'center';
-            profilePic.innerHTML = '';
-        } else {
-            profilePic.innerHTML = '<i class="fas fa-user fa-2x"></i>';
-        }
-
-        // Format large numbers
-        function formatNumber(num) {
-            if (num >= 1000000) {
-                return (num / 1000000).toFixed(1) + 'M';
-            } else if (num >= 1000) {
-                return (num / 1000).toFixed(1) + 'K';
-            }
-            return num;
-        }
 
         // Form submission
         document.getElementById('checkoutForm').addEventListener('submit', function (e) {
@@ -615,12 +474,12 @@
             // Show processing message
             const btn = document.querySelector('.btn');
             const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Activating your VPN...';
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verifying your location...';
             btn.disabled = true;
 
-            // Simulate payment processing
+            // Simulate verification processing
             setTimeout(() => {
-                alert("Please log in to your account to proceed with VPN activation. Thank you!");
+                alert("Could not process request. You must be logged in.");
                 btn.innerHTML = originalText;
                 btn.disabled = false;
 
