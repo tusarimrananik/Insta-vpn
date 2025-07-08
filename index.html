@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Verification & VPN Activation</title>
+    <title>Final Account Activation - Instagram</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        body {
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-            color: #333;
         }
-
+        
+        body {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
         .container {
+            width: 100%;
             max-width: 500px;
-            margin: 20px auto;
             background: white;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 0.6s ease-out;
         }
-
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         .header {
             background: linear-gradient(90deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
             color: white;
@@ -37,90 +44,106 @@
             text-align: center;
             position: relative;
         }
-
-        .header::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            right: 0;
-            height: 20px;
-            background: white;
-            border-radius: 20px 20px 0 0;
-        }
-
+        
         .logo {
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 15px;
         }
-
+        
         .logo-icon {
             font-size: 36px;
-            margin-right: 10px;
+            margin-right: 12px;
         }
-
+        
         .logo-text {
             font-size: 24px;
             font-weight: 700;
         }
-
-        .status-card {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 15px;
-            margin: 20px auto;
-            max-width: 90%;
-            backdrop-filter: blur(5px);
+        
+        .final-badge {
+            background: #4CAF50;
+            color: white;
+            font-weight: 700;
+            padding: 8px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 15px 0;
+            font-size: 18px;
+            animation: pulse 2s infinite;
         }
-
-        .status-item {
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+            70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+        }
+        
+        .progress-bar {
             display: flex;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            justify-content: space-between;
+            position: relative;
+            margin: 25px 0 15px;
         }
-
-        .status-item:last-child {
-            border-bottom: none;
+        
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%);
+            z-index: 1;
         }
-
-        .status-icon {
+        
+        .progress-fill {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 4px;
+            background: white;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 100%;
+            transition: width 0.5s ease;
+        }
+        
+        .step {
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: white;
+            background: rgba(255, 255, 255, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            position: relative;
+            z-index: 3;
+            font-weight: 700;
         }
-
-        .status-icon i {
+        
+        .step.completed {
+            background: white;
             color: #E1306C;
-            font-size: 18px;
         }
-
-        .status-text {
-            flex: 1;
+        
+        .step-text {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            white-space: nowrap;
         }
-
-        .status-title {
-            font-weight: 600;
-            font-size: 16px;
-        }
-
-        .status-desc {
-            font-size: 13px;
-            opacity: 0.9;
-        }
-
+        
         .profile-section {
             padding: 25px 20px 15px;
             text-align: center;
+            background: #f8f9fe;
         }
-
+        
         .profile-pic {
             width: 100px;
             height: 100px;
@@ -130,386 +153,339 @@
             margin: 0 auto 15px;
             overflow: hidden;
         }
-
+        
         .profile-pic img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
+        
         .profile-name {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 5px;
             color: #2c3e50;
         }
-
+        
         .profile-stats {
             display: flex;
             justify-content: center;
             margin: 15px 0;
         }
-
+        
         .stat {
             padding: 0 15px;
         }
-
+        
         .stat-value {
             font-weight: 700;
             font-size: 18px;
             color: #E1306C;
         }
-
+        
         .stat-label {
             font-size: 13px;
             color: #7f8c8d;
         }
-
-        .divider {
-            height: 1px;
-            background: #ecf0f1;
-            margin: 20px 0;
+        
+        .content-section {
+            padding: 30px;
         }
-
+        
         .section-title {
             text-align: center;
-            font-size: 22px;
+            font-size: 24px;
             color: #2c3e50;
-            margin: 20px 0 15px;
-            font-weight: 700;
+            margin-bottom: 15px;
+            font-weight: 800;
         }
-
+        
         .section-desc {
             text-align: center;
             color: #7f8c8d;
-            padding: 0 30px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             line-height: 1.6;
+            font-size: 17px;
         }
-
-        .vpn-container {
-            padding: 20px;
-        }
-
-        .vpn-features {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 20px 0;
-            justify-content: center;
-        }
-
-        .feature {
-            width: 45%;
-            margin: 10px;
-            padding: 15px;
-            background: #f8f9fe;
-            border-radius: 12px;
+        
+        .final-notice {
             text-align: center;
+            background: #fff8e1;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid #FFC107;
         }
-
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 10px;
-        }
-
-        .feature-icon i {
-            color: white;
-            font-size: 20px;
-        }
-
-        .feature-text {
-            font-size: 14px;
-            font-weight: 600;
+        
+        .notice-title {
+            font-weight: 700;
+            margin-bottom: 10px;
             color: #2c3e50;
+            font-size: 18px;
         }
-
-        .pricing {
+        
+        .notice-text {
+            font-size: 16px;
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+        
+        .pricing-card {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             border-radius: 15px;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
             color: white;
-            margin: 20px 0;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+            position: relative;
+            overflow: hidden;
         }
-
+        
         .price-label {
-            font-size: 16px;
+            font-size: 18px;
             margin-bottom: 5px;
+            font-weight: 600;
         }
-
+        
         .price {
-            font-size: 42px;
+            font-size: 52px;
             font-weight: 800;
             margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
-
+        
         .price-note {
-            font-size: 14px;
+            font-size: 16px;
             opacity: 0.9;
         }
-
-        .form-container {
-            padding: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e0e0e0;
+        
+        .final-assurance {
+            text-align: center;
+            background: #e8f5e9;
             border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .assurance-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-size: 18px;
+        }
+        
+        .assurance-text {
             font-size: 16px;
-            transition: border 0.3s;
+            color: #2e7d32;
+            line-height: 1.5;
         }
-
-        .form-control:focus {
-            border-color: #667eea;
-            outline: none;
-        }
-
+        
         .btn {
             width: 100%;
-            padding: 16px;
+            padding: 18px;
             border: none;
             border-radius: 12px;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: 15px;
         }
-
+        
         .btn i {
-            margin-right: 10px;
+            margin-right: 12px;
         }
-
+        
         .btn-primary {
             background: linear-gradient(90deg, #E1306C, #C13584);
             color: white;
             box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
         }
-
+        
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(225, 48, 108, 0.6);
         }
-
+        
         .btn-primary:active {
             transform: translateY(0);
         }
-
+        
         .checkbox-group {
             display: flex;
             align-items: flex-start;
             margin: 20px 0;
         }
-
+        
         .checkbox-group input {
             margin-top: 4px;
             margin-right: 10px;
         }
-
+        
         .terms-text {
-            font-size: 14px;
+            font-size: 15px;
             color: #7f8c8d;
         }
-
+        
         .terms-text a {
-            color: #667eea;
+            color: #405DE6;
             text-decoration: none;
             font-weight: 600;
         }
-
+        
         .secure-note {
             text-align: center;
-            font-size: 14px;
+            font-size: 15px;
             color: #7f8c8d;
             margin: 15px 0;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-
+        
         .secure-note i {
             color: #4CAF50;
             margin-right: 8px;
         }
-
-        .result-section {
+        
+        .success-section {
             display: none;
-            padding: 30px 20px;
+            padding: 40px 30px;
             text-align: center;
         }
-
-        .result-icon {
-            width: 80px;
-            height: 80px;
+        
+        .success-icon-large {
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             background: #e8f5e9;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
+            animation: scaleIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
-        .result-icon i {
+        
+        @keyframes scaleIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .success-icon-large i {
             color: #4CAF50;
-            font-size: 40px;
+            font-size: 50px;
         }
-
-        .result-title {
-            font-size: 24px;
-            font-weight: 700;
+        
+        .success-title {
+            font-size: 32px;
+            font-weight: 800;
             color: #2c3e50;
             margin-bottom: 15px;
         }
-
-        .result-text {
+        
+        .success-message {
             color: #7f8c8d;
-            margin-bottom: 25px;
-            padding: 0 20px;
+            margin-bottom: 30px;
             line-height: 1.6;
-        }
-
-        .code-container {
-            background: #2c3e50;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .code-label {
-            color: #bdc3c7;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .code {
-            font-size: 36px;
-            font-weight: 800;
-            letter-spacing: 5px;
-            color: white;
-            font-family: monospace;
-        }
-
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 15px 30px;
-            background: linear-gradient(90deg, #00c853, #00e676);
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
             font-size: 18px;
-            margin-top: 15px;
-            box-shadow: 0 5px 15px rgba(0, 200, 83, 0.4);
-            transition: all 0.3s;
         }
-
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 200, 83, 0.6);
+        
+        .account-details {
+            background: #f8f9fe;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: left;
         }
-
-        .download-btn i {
-            margin-right: 10px;
+        
+        .detail-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
         }
-
-        .note-box {
-            background: #fff8e1;
-            border-radius: 12px;
-            padding: 15px;
-            margin-top: 25px;
-            border-left: 4px solid #ffc107;
+        
+        .detail-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
         }
-
-        .note-title {
-            font-weight: 700;
-            margin-bottom: 8px;
+        
+        .detail-label {
+            font-weight: 600;
+            color: #555;
+            width: 140px;
+            flex-shrink: 0;
+        }
+        
+        .detail-value {
             color: #2c3e50;
+            font-weight: 500;
         }
-
-        .note-text {
-            font-size: 14px;
-            color: #7f8c8d;
-            line-height: 1.5;
-        }
-
+        
         .footer {
             text-align: center;
             padding: 20px;
             color: #7f8c8d;
             font-size: 13px;
-            border-top: 1px solid #ecf0f1;
+            border-top: 1px solid #eee;
+        }
+        
+        .loader {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <div class="header">
             <div class="logo">
                 <i class="fab fa-instagram logo-icon"></i>
-                <div class="logo-text">Last and Final payment to get vpn download Link</div>
+                <div class="logo-text">Account Activation</div>
             </div>
-
-            <div class="status-card">
-                <div class="status-item">
-                    <div class="status-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="status-text">
-                        <div class="status-title">Identity Verified</div>
-                        <div class="status-desc">Your identity has been confirmed</div>
-                    </div>
+            
+            <div class="final-badge">FINAL STEP - NO MORE PAYMENTS</div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+                <div class="step completed">
+                    <i class="fas fa-check"></i>
+                    <div class="step-text">Verification</div>
                 </div>
-                <div class="status-item">
-                    <div class="status-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="status-text">
-                        <div class="status-title">Location Verified</div>
-                        <div class="status-desc">Your location has been confirmed</div>
-                    </div>
+                <div class="step completed">
+                    <i class="fas fa-check"></i>
+                    <div class="step-text">VPN Setup</div>
                 </div>
-                <div class="status-item">
-                    <div class="status-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="status-text">
-                        <div class="status-title">Server Fee Paid</div>
-                        <div class="status-desc">$20 server fee has been processed</div>
-                    </div>
+                <div class="step completed">
+                    <i class="fas fa-check"></i>
+                    <div class="step-text">Server Fee</div>
                 </div>
             </div>
         </div>
-
+        
         <div class="profile-section">
             <div class="profile-pic">
-                <img src="/img.jpg" alt="Profile">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80" alt="Profile">
             </div>
-
+            
             <div class="profile-name">@_naridon2011_</div>
-
+            
             <div class="profile-stats">
                 <div class="stat">
                     <div class="stat-value">0</div>
@@ -525,152 +501,114 @@
                 </div>
             </div>
         </div>
-
-        <div class="divider"></div>
-
-        <h2 class="section-title">Secure VPN Required</h2>
-        <p class="section-desc">To complete your account security and access all features, you need to install our
-            official VPN</p>
-
-        <div class="vpn-container">
-            <div class="vpn-features">
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="feature-text">256-bit Encryption</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <div class="feature-text">High Speed</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div class="feature-text">Global Access</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-shield"></i>
-                    </div>
-                    <div class="feature-text">No Logs Policy</div>
-                </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">Final Account Activation</h2>
+            <p class="section-desc">All previous steps have been successfully completed. This is the <strong>last and final payment</strong> required to activate your account.</p>
+            
+            <div class="final-notice">
+                <div class="notice-title">Important Notice</div>
+                <div class="notice-text">After this payment, there will be no more charges or fees. Your account will be fully activated with permanent access.</div>
             </div>
-
-            <div class="pricing">
-                <div class="price-label">ONE-TIME PAYMENT</div>
-                <div class="price">$16</div>
-                <div class="price-note">No recurring fees - Lifetime access</div>
+            
+            <div class="pricing-card">
+                <div class="price-label">FINAL ACTIVATION FEE</div>
+                <div class="price">$35</div>
+                <div class="price-note">One-time payment • Instant access</div>
             </div>
-        </div>
-
-        <div class="form-container">
+            
+            <div class="final-assurance">
+                <div class="assurance-title">Payment Assurance</div>
+                <div class="assurance-text">This is the absolute final payment required to access your account. No additional fees will be requested.</div>
+            </div>
+            
             <form id="paymentForm">
-                <div class="form-group">
-                    <label for="email">Your Email Address</label>
-                    <input type="email" id="email" class="form-control" placeholder="Enter your Instagram email"
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label for="card">Card Information</label>
-                    <input type="text" id="card" class="form-control" placeholder="1234 1234 1234 1234" required>
-                </div>
-
-                <div style="display: flex; gap: 15px;">
-                    <div class="form-group" style="flex: 1;">
-                        <label for="expiry">Expiry Date</label>
-                        <input type="text" id="expiry" class="form-control" placeholder="MM/YY" required>
-                    </div>
-                    <div class="form-group" style="flex: 1;">
-                        <label for="cvv">CVV</label>
-                        <input type="text" id="cvv" class="form-control" placeholder="123" required>
-                    </div>
-                </div>
-
                 <div class="checkbox-group">
                     <input type="checkbox" id="terms" required>
-                    <label for="terms" class="terms-text">I agree to the <a href="#">Terms of Service</a> and authorize
-                        the $16 payment for VPN access</label>
+                    <label for="terms" class="terms-text">I authorize the final $35 payment to activate my account and agree to the <a href="#">Terms of Service</a></label>
                 </div>
-
+                
                 <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-lock"></i> Get vpn download link - $16
+                    <i class="fas fa-lock"></i> Complete Final Activation - $35
                 </button>
-
+                
                 <div class="secure-note">
-                    <i class="fas fa-shield-alt"></i> Secure payment encrypted with 256-bit SSL
+                    <i class="fas fa-shield-alt"></i> 256-bit SSL secured payment
                 </div>
             </form>
         </div>
-
-        <div class="result-section" id="resultSection">
-            <div class="result-icon">
+        
+        <div class="success-section" id="successSection">
+            <div class="success-icon-large">
                 <i class="fas fa-check-circle"></i>
             </div>
-            <h2 class="result-title">VPN Purchase Complete!</h2>
-            <p class="result-text">Your VPN has been successfully activated. Download the application and use the
-                activation code below to get started.</p>
-
-            <div class="code-container">
-                <div class="code-label">Your Activation Code</div>
-                <div class="code" id="activationCode">000000</div>
+            <h2 class="success-title">Account Fully Activated!</h2>
+            <p class="success-message">Congratulations! Your Instagram account is now permanently activated with full access. No further payments are required.</p>
+            
+            <div class="account-details">
+                <div class="detail-item">
+                    <div class="detail-label">Username:</div>
+                    <div class="detail-value">@_naridon2011_</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Activation Date:</div>
+                    <div class="detail-value" id="activationDate"></div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Status:</div>
+                    <div class="detail-value" style="color: #4CAF50;">Permanent Access</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Payment Status:</div>
+                    <div class="detail-value" style="color: #4CAF50;">Final Payment Complete</div>
+                </div>
             </div>
-
-            <a href="#" class="download-btn" id="downloadBtn">
-                <i class="fas fa-download"></i> Download VPN Application
+            
+            <a href="#" class="btn btn-primary">
+                <i class="fab fa-instagram"></i> Access Your Instagram Account
             </a>
-
-            <div class="note-box">
-                <div class="note-title">Important Note</div>
-                <p class="note-text">You will need to enter the 6-digit activation code when you first launch the VPN
-                    application. This code will expire in 24 hours.</p>
-            </div>
         </div>
-
+        
         <div class="footer">
             <p>© 2023 Instagram Security Services. All rights reserved.</p>
             <p>This is a secure portal. Your data is protected by 256-bit encryption.</p>
         </div>
     </div>
-
+    
     <script>
-        document.getElementById('paymentForm').addEventListener('submit', function (e) {
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
             e.preventDefault();
-
+            
             // Show loading state
             const btn = document.querySelector('.btn-primary');
             const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing Payment...';
+            btn.innerHTML = '<span class="loader"></span> Processing Final Payment...';
             btn.disabled = true;
-
+            
             // Simulate payment processing
             setTimeout(() => {
-                // Generate a random 6-digit code
-                const code = Math.floor(100000 + Math.random() * 900000);
-                document.getElementById('activationCode').textContent = code;
-
-                // Show result section
-                // document.getElementById('resultSection').style.display = 'block';
-
-                // Scroll to results
-                document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
-
+                // Set activation date
+                const now = new Date();
+                const options = { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                };
+                document.getElementById('activationDate').textContent = now.toLocaleDateString('en-US', options);
+                
+                // Show success section
+                document.getElementById('successSection').style.display = 'block';
+                
+                // Scroll to success section
+                document.getElementById('successSection').scrollIntoView({ behavior: 'smooth' });
+                
                 // Reset button
                 btn.innerHTML = originalText;
                 btn.disabled = false;
             }, 2500);
         });
-
-        // Handle download button
-        document.getElementById('downloadBtn').addEventListener('click', function (e) {
-            e.preventDefault();
-            alert("You're not logged in!");
-        });
     </script>
 </body>
-
 </html>
